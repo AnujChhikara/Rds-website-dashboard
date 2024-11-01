@@ -46,7 +46,6 @@ describe('Request container for non-super users', () => {
 
   it('Approve and Reject buttons should not render for non-super users', async function () {
     await page.goto(
-
       'http://localhost:8000/task-requests/details/?id=dM5wwD9QsiTzi7eG7Oq5&dev=true',
     );
     await page.waitForTimeout(2000);
@@ -59,11 +58,9 @@ describe('Request container for non-super users', () => {
 
   it('Should render task status for non-super users', async function () {
     await page.goto(
-
       'http://localhost:8000/task-requests/details/?id=dM5wwD9QsiTzi7eG7Oq5&dev=true',
     );
     await page.waitForTimeout(2000);
-
 
     const taskRequestStatus = await page.$(
       '[data-testid="requestors-task-status"]',
@@ -159,7 +156,6 @@ describe('Task request details page', () => {
 
   it('Should render Approve and Reject buttons for super users', async function () {
     await page.goto(
-
       'http://localhost:8000/task-requests/details/?id=dM5wwD9QsiTzi7eG7Oq5&&dev=true',
     );
     const approveButton = await page.$('[data-testid="task-approve-button"]');
